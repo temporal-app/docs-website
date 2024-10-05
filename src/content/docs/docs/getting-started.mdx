@@ -1,8 +1,12 @@
 ---
-title: Getting Started
+title: Getting started
 ---
-Welcome to Temporal Documentation, your platform for smart capacity planning and collaborative scheduling! 
-This guide will help you get started with Temporal.
+import {Steps} from "@astrojs/starlight/components";
+import { Aside } from '@astrojs/starlight/components';
+
+![Logo](../../../assets/banner.webp)
+
+Welcome to Temporal - your gateway to smart capacity planning and collaborative scheduling! This guide will jumpstart your journey with our platform.
 
 ## Introduction
 
@@ -12,17 +16,18 @@ you track time, manage schedules, and analyze time data.
 ## Pre-requisites
 
 - A modern web browser (Chrome, Firefox, Safari, Edge)
-- An internet connection
-- Valid email address for account creation
+- A stable internet connection
+- A valid email address
 
 ## Sign Up
 
-Anyone can sign up for Temporal. To sign up, visit the Temporal website and click the **Sign Up** button. 
-You can select between several sign up methods - choose one that is most convenient to you. 
-Once you have signed up, you can log in to Temporal at any time.
+1. Visit the Temporal website and click the Sign Up button.
+2. Choose your preferred sign-up method.
+3. Log in to access your account.
 
-If your email address is configured in any of existing workspaces, you will be immediately be able to log in to those workspaces.
-If none workspaces are configured with your email address, you will be taken to the new workspace creation dialog.
+<Aside>
+	If your email is associated with existing workspaces, you'll have immediate access. Otherwise, you'll be prompted to create a new workspace.
+</Aside>
 
 ## Create a Workspace
 
@@ -30,20 +35,49 @@ A workspace is a container for your data in Temporal. Workspace consists of memb
 
 In order to create a workspace, you need to provide the following information:
 
-- **Workspace name**. This is the name of your workspace. It can be anything you like. A common choice is the name of your company or team. You will be able to change it later.
-- **Dataset**. Initial state of configurations in your workspace. It is highly recommended to create workspaces with *Basic* dataset which comes preconfigured with basic event categories and types. You will be able to start creating member events immediately after creating the workspace if *Basic* dataset is used.
+- **Workspace name**. Choose a name that reflects your company or team. Don't worry, you can change it later.
+- **Dataset**. We recommend starting with the Basic dataset for a pre-configured experience.
 
-### Demo Workspace
+<Aside type="tip" title="Pro Tip">
+	Curious about Temporal's full potential? Create a workspace with the Demo dataset to explore all our features.
+</Aside>
 
-If you would like to explore what functionalities Temporal has to offer, you can choose *Demo* dataset for a workspace when creating it.
+## Quick Start Guide
+
+Once you have created a workspace, you can start using Temporal. Here are some common tasks to get you started:
+
+<Steps>
+
+1. **Create members**
+
+	Add the people whose schedules you'll manage
+
+2. **Form teams**
+
+	Group your members into collaborative units.
+
+3. **Define event categories**
+
+	Organize your event types (skip if using Basic dataset)
+
+4. **Set up event types**
+
+	Specify the kinds of events you'll schedule (skip if using Basic dataset).
+
+5. **Add group events** *(optional)*
+
+	Create calendar events that apply to multiple members, like holidays.
+
+</Steps>
+
+Once you have completed these steps, you can start creating events and managing schedules in Temporal.
 
 ## Support and Feedback
 
-Available resources:
-- [Public issue tracker](https://temporal.youtrack.cloud/issues?q=project:%20Issues)
-- [Public roadmap](https://temporal.youtrack.cloud/issues?q=project:%20Features)
+Need assistance or want to share feedback? We've got you covered:
 
-If you have any questions or need help, you can reach out to Temporal support team using any of the following methods:
-
-- Use Help menu in the bottom left corner of the app and select "Contact us".
-- Email us at temporal [at] youtrack [dot] cloud.
+- Expore our [public issue tracker](https://temporal.youtrack.cloud/issues?q=project:%20Issues)
+- Check out our [public roadmap](https://temporal.youtrack.cloud/issues?q=project:%20Features)
+- Reach out to our support team:
+	- Use the Help menu in the bottom left corner of the app and select "Contact us".
+	- Email us at temporal [at] youtrack [dot] cloud.

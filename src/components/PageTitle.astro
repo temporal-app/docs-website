@@ -1,3 +1,16 @@
 ---
-$END$
+import type { Props } from '@astrojs/starlight/props';
+import StarlightPageTitle from '@astrojs/starlight/components/PageTitle.astro';
+
+const description = Astro.props.entry.data.description;
 ---
+<StarlightPageTitle {...Astro.props}/>
+<p id="page-description">{description}</p>
+
+<style>
+	p#page-description {
+		font-size: 1.1rem;
+		color: var(--sl-color-gray-2);
+		margin-top: 0.5rem;
+	}
+</style>

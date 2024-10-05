@@ -1,0 +1,42 @@
+---
+title: Capacity
+description: Capacity is the crucial measure for calculating the availability of a member
+---
+import { Aside } from '@astrojs/starlight/components';
+
+![Logo](../../../assets/capacity-planning.webp)
+
+One of the most important aspects of managing your team's schedule is understanding the capacity of your team members over the upcoming time periods. Your team members may be engaged in various side activities that reduce their availability for the main line of work for their role. In addition to that, people may be sick, on vacations or otherwise unavailable for work. Temporal helps you to plan for these situations by providing a comprehensive set of capacity planning tools.
+
+Capacity planning is completely optional in Temporal, and you can turn it off if you don't need in specific teams or views. 
+
+## Capacity modifiers
+
+Capacity modifiers are the main way to adjust the availability of a member during a certain time range. Capacity modifiers are expressed as percentages, where 0% means the member is completely unavailable, 100% means the member is fully available, and any value in between means the member is partially available.
+
+When you create an event, you can set the capacity modifier for the event. This value will be used to adjust the member's capacity during the event time range. Event capacity is determined by the event type's default capacity modifier, parent event type category's default capacity modifier, and member's default capacity modifier.
+
+### Unavailable
+
+When an event capacity modifier is set to 0%, the member is considered completely unavailable during the event time range. The typical examples of such events are most of the events in the "Planned Time Off" and "Unplanned Time Off" categories, such as sick leaves, vacations, etc.
+
+### Available
+
+When an event capacity modifier is set to 100%, the member is considered fully available during the event time range. This is typically used when you want to create an event for information or reporting purposes without affecting the capacity calculation. For example, you may want to create "On Call" events which informs everyone about the work arrangement for a member, while explicitly setting the capacity of the event to 100%, meaning the member is fully available for the main line of work.
+
+Other notable example includes "Working From Home" and "Working From Office" events, which can be used to indicate the work location of the member, while not affecting the capacity calculation.
+
+### Partially available
+
+When an event capacity modifier is set to any value between 0% and 100%, the member is considered partially available during the event time range. This is typically used when you want to create an event that affects the capacity of the member, but not completely. For example, if your employee is engaged in a project, but not for 100% of their time, so they can still be available for some part of their time for the main line of work, you can create an event with a capacity modifier to represent their project engagement, for example, 50%.
+
+<Aside>
+	Default capacity modifiers for event types and members will determine the initial value for the capacity modifier of a new event. You can then adjust this value as needed when creating the event.
+</Aside>
+
+## Resolving conflicts
+
+When multiple events overlap each other, the capacity for the overlapping time period is calculated by taking into account the display order of events. The event with the highest display order will take precedence over the events with lower display order, and its capacity modifier will be used for the overlapping time period.
+
+The display order for overlapping events is controlled by event type's Z-Index property. 
+
