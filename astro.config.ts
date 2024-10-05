@@ -4,8 +4,10 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://" + import.meta.env.VITE_DOMAIN_NAME,
+	base: '/docs',
 	redirects: {
-		'/docs': '/docs/getting-started',
+		'/': '/docs/getting-started',
 	},
 	integrations: [
 		starlight({
@@ -28,7 +30,7 @@ export default defineConfig({
 						async: true,
 						src: "https://www.googletagmanager.com/gtag/js?id=G-8P3ZWGQ101"
 					}
-				}, 
+				},
 				{
 					tag: "script",
 					content: `
@@ -43,29 +45,29 @@ export default defineConfig({
 				{
 					label: 'Start Here',
 					items: [
-						{ label: 'Getting started', link: 'docs/getting-started' },
-						{ label: 'Concepts', link: 'docs/concepts' },
+						{ label: 'Getting started', link: '/getting-started' },
+						{ label: 'Concepts', link: '/concepts' },
 					],
 				},
 				{
 					label: 'Administrator guides',
 					items: [
-						{ label: "Workspaces", link: "/docs/workspaces" },
-						{ label: "Managing members", link: "/docs/managing-members" },
-						{ label: "Managing teams", link: "/docs/managing-teams" },
-						{ label: "Managing event categories", link: "/docs/managing-event-categories" },
-						{ label: "Managing event types", link: "/docs/managing-event-types" },
-						{ label: "Managing group events", link: "/docs/managing-group-events" },
-						{ label: "Billing and plans", link: "/docs/billing-and-plans" },
-						{ label: "Audit log", link: "/docs/audit-log" },
+						{ label: "Workspaces", link: "workspaces" },
+						{ label: "Managing members", link: "/managing-members" },
+						{ label: "Managing teams", link: "/managing-teams" },
+						{ label: "Managing event categories", link: "/managing-event-categories" },
+						{ label: "Managing event types", link: "/managing-event-types" },
+						{ label: "Managing group events", link: "/managing-group-events" },
+						{ label: "Billing and plans", link: "/billing-and-plans" },
+						{ label: "Audit log", link: "/audit-log" },
 					]
 				},
 				{
 					label: 'User guides',
 					items: [
-						{ label: "Creating events", link: "/docs/creating-events" },
-						{ label: "Configuring calendars", link: "/docs/configuring-calendars" },
-						{ label: "Capacity", link: "/docs/capacity" },
+						{ label: "Creating events", link: "/creating-events" },
+						{ label: "Configuring calendars", link: "/configuring-calendars" },
+						{ label: "Capacity", link: "/capacity" },
 					]
 				},
 			],
