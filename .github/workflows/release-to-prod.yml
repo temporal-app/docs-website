@@ -31,15 +31,9 @@ jobs:
         run: yarn install
 
       - name: Build application
-        run: yarn run build --base=/ui
+        run: yarn run build
         env:
-          VITE_COGNITO_USERPOOL_ID: us-east-1_CxbT065mM
-          VITE_COGNITO_WEBCLIENT_ID: 6qhqrhvimbrgkmb6b1gsd87v6j
-          VITE_COGNITO_OAUTH_DOMAIN: auth.temporal.app
-          VITE_COGNITO_OAUTH_REDIRECT_SIGNIN: https://temporal.app/auth/login
-          VITE_COGNITO_OAUTH_REDIRECT_SIGNOUT: https://temporal.app/auth/logout
-          VITE_GRAPHQL_ENDPOINT: https://appsync.temporal.app/graphql
-          VITE_GOOGLE_ANALYTICS_ID: G-TRWVW8TCT4
+          VITE_DOMAIN_NAME: temporal.app
 
       - name: Run tests
         run: yarn run test
@@ -52,4 +46,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy to S3
-        run: aws s3 sync dist/ s3://${{ env.BUCKET_NAME }}/ui
+        run: aws s3 sync dist/ s3://${{ env.BUCKET_NAME }}/docs --delete
